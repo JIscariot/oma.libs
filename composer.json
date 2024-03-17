@@ -1,0 +1,34 @@
+{
+  "name": "oma/libs",
+  "type": "project",
+  "keywords": ["libs"],
+  "license": "MIT",
+  "autoload": {
+    "files": [
+      "src/Dotenv/helpers.php"
+    ],
+    "psr-4": {
+      "Libs\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "8.1"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^7.0",
+    "symfony/dotenv": "^6.4",
+    "symfony/console": "^6.4",
+    "composer/class-map-generator": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5",
+    "symfony/var-dumper": "^6.4"
+  }
+}
