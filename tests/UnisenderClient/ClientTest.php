@@ -55,7 +55,7 @@ class ClientTest extends TestCase
                     self:: UNISENDER_MAILING_NEWSLETTER_PROMO_LIST,
                 ],
             ));
-        $this->assertTrue($result);
+        $this->assertIsNumeric($result);
 
         $result = (new Client(self::UNISENDER_API_KEY))
             ->unsubscribe(new ContactData(
@@ -82,7 +82,7 @@ class ClientTest extends TestCase
                 self:: UNISENDER_MAILING_NEWSLETTER_PROMO_LIST,
             ],
         ));
-        $this->assertTrue($result);
+        $this->assertIsNumeric($result);
 
         $unisenderClient = (new Client(self::UNISENDER_API_KEY));
         $result = $unisenderClient->deleteContact(new ContactData(
@@ -110,7 +110,7 @@ class ClientTest extends TestCase
                 self:: UNISENDER_MAILING_NEWSLETTER_PROMO_LIST,
             ],
         ));
-        $this->assertTrue($result);
+        $this->assertIsNumeric($result);
 
 
         $unisenderClient = (new Client(self::UNISENDER_API_KEY));
