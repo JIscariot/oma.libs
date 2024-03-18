@@ -33,7 +33,7 @@ class ClientTest extends TestCase
                     self:: UNISENDER_MAILING_NEWSLETTER_PROMO_LIST,
                 ],
             ));
-        $this->assertTrue($result);
+        $this->assertIsNumeric($result);
 
         $unisenderClient = (new Client(self::UNISENDER_API_KEY));
         $result = $unisenderClient->isContactExists(new ContactData(

@@ -60,7 +60,7 @@ final class Client
     /**
      * @throws Throwable
      */
-    public function subscribe(ContactData $data): bool
+    public function subscribe(ContactData $data): int
     {
         $responseBody = $this->request('POST', 'subscribe', [
             'form_params' => [
@@ -73,7 +73,7 @@ final class Client
             ],
         ]);
 
-        return true;
+        return $responseBody->person_id;
     }
 
     /**
