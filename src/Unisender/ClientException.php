@@ -16,6 +16,7 @@ final class ClientException extends Exception
                 'unspecified' => 10404,
                 default => 0,
             };
+            var_dump($code);
         }
 
         parent::__construct($message, $code, $previous);
