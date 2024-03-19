@@ -38,7 +38,7 @@ final class Client
                 property_exists($responseBody, 'code') &&
                 property_exists($responseBody, 'error')
             ) {
-                throw new ClientException($responseBody->error, $responseBody->code);
+                throw new ClientException($responseBody->error);
             }
 
             return $responseBody->result;
@@ -129,7 +129,7 @@ final class Client
 
             return true;
         } catch (ClientException $e) {
-            if ($e->getCode() === 10404) {
+            if ($e->getCode() === 1404) {
                 return false;
             }
             throw $e;

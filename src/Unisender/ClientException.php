@@ -9,14 +9,12 @@ use Throwable;
 
 final class ClientException extends Exception
 {
-    public function __construct(string $message = "", string|int $code = 0, ?Throwable $previous = null)
+    public function __construct(string $message = "", int $code = 0, ?Throwable $previous = null)
     {
-        if (is_string($code)) {
-            var_dump($code);
-
-            $code = match ($code) {
-                'unspecified' => 10404,
-                default => 0,
+        if (empty($code)) {
+            $code = match (true) {
+                str_contains($message, 'Contact not found') => 1404,
+                str_contains($message, 'is not a valid email address') => 1422,
             };
         }
 
