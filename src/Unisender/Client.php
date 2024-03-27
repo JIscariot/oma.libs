@@ -65,6 +65,7 @@ final class Client
         $responseBody = $this->request('POST', 'subscribe', [
             'form_params' => [
                 'overwrite' => 1,
+                'double_optin' => 4,
                 'fields' => [
                     'email' => $data->email,
                     'Name' => $data->name,
