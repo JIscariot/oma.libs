@@ -13,8 +13,9 @@ final class ClientException extends Exception
     {
         if (empty($code)) {
             $code = match (true) {
-                str_contains($message, 'Contact not found') => 1404,
-                str_contains($message, 'is not a valid email address') => 1422,
+                str_contains($message, "Contact not found") => 1404,
+                str_contains($message, "'email' is required") => 1423,
+                str_contains($message, "is not a valid email address") => 1422,
                 default => 0,
             };
         }
