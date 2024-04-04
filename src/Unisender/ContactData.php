@@ -10,6 +10,8 @@ final class ContactData
         readonly public string  $email,
         readonly public ?string $name = null,
         readonly public ?array  $lists = [],
+        readonly public int  $overwrite = 2,
+        readonly public int  $duplicate = 4,
     )
     {
     }
